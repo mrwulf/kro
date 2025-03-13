@@ -3,8 +3,8 @@
 This example creates a ResourceGraphDefinition called `WebStack` comprised of
 three other RGs: `WebApp`, `S3Bucket`, and `PodIdentity`
 
-![Netsted RGD Instance](../../images/architecture-diagrams/kro-WebStack.png)
-_Fugure 1: Nested RGD Example_
+![Netsted RGD Instance](../../../images/architecture-diagrams/kro-WebStack.png)
+_Figure 1: Nested RGD Example_
 
 ### Create ResourceGraphDefinitions
 
@@ -17,8 +17,8 @@ cd examples/
 Apply the RGs to your cluster:
 
 ```
-kubectl apply -f podidenity/rg.yaml -f s3bucket/rg.yaml -f webapp/rg.yaml
-kubectl apply -f webstack/rg.yaml
+kubectl apply -f aws/podidenity/rg.yaml -f aws/s3bucket/rg.yaml -f kubernetes/webapp/rg.yaml
+kubectl apply -f aws/webstack/rg.yaml
 ```
 
 Validate the RGs statuses are Active:
@@ -63,6 +63,23 @@ a new file called instance.yaml.
 ```shell
 envsubst < "webstack/instance-tmpl.yaml" > "webstack/instance.yaml"
 ```
+`clusterName` is a required field to achieve pod identity association. If your cluster name is not 'kro' then replace the value assigned to this field in the `webstack/instance.yaml` file with the name of your cluter. 
+
+<pre>
+apiVersion: kro.run/v1alpha1
+kind: WebStack
+metadata:
+  name: test-app
+spec:
+  name: my-test-app-name
+  <mark>clusterName:</mark> kro # change this value if your cluster name is not kro
+  image: candonov/s3-demo-app
+  s3bucket:
+    enabled: true
+    access: write
+  ingress:
+    enabled: true # this will expose unathenticated alb
+  service: {}`</pre>
 
 Apply the `webstack/instance.yaml`
 

@@ -1,5 +1,13 @@
 # kro | Kube Resource Orchestrator
 
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/kro-run/kro)](https://goreportcard.com/report/github.com/kro-run/kro)
+[![unit tests](https://github.com/kro-run/kro/actions/workflows/unit-tests.yaml/badge.svg)](https://github.com/kro-run/kro/actions/workflows/unit-tests.yaml)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/kro-run/Kro)
+![GitHub License](https://img.shields.io/github/license/kro-run/kro)
+[![Build and Publish](https://github.com/kro-run/kro/actions/workflows/build-push-image.yaml/badge.svg?branch=main)](https://github.com/kro-run/kro/actions/workflows/build-push-image.yaml)
+![GitHub Repo stars](https://img.shields.io/github/stars/kro-run/kro)
+
 This project aims to simplify the creation and management of complex custom resources for Kubernetes.
 
 Kube Resource Orchestrator (**kro**) helps you to define complex multi-resource constructs as reusable components in your applications and systems. It does this by providing a Kubernetes-native, vendor agnostic way to define groupings of Kubernetes resources. 
@@ -76,11 +84,13 @@ Please join our community meeting.
 * Every other Wednesday at 9AM PT (Pacific Time). [Convert to local timezone][tz-help] 
 * Agenda: [Public doc][agenda]
 * Join us: [Zoom meeting][zoom]
+* Community meeting recordings:  [YouTube channel][youtube]
 
 
 [tz-help]: http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29
 [agenda]: https://docs.google.com/document/d/1GqeHcBlOw6ozo-qS4TLdXSi5qUn88QU6dwdq0GvxRz4/edit?tab=t.0
 [zoom]: https://us06web.zoom.us/j/85388697226?pwd=9Xxz1F0FcNUq8zFGrsRqkHMhFZTpuj.1
+[youtube]: https://www.youtube.com/channel/UCUlcI3NYq9ehl5wsdfbJzSA
 
 ## Security
 
